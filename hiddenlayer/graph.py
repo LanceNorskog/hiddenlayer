@@ -16,6 +16,7 @@ import numpy as np
 
 counter = 0
 def newlabel(label):
+    global counter
     if label == None or type(label) != type(''):
         counter += 1
         return 'labbel%d'.format(counter)
