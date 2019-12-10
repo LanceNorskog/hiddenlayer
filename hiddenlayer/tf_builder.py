@@ -67,7 +67,7 @@ def import_graph(hl_graph, tf_graph, output=None, verbose=False):
     """
     # Get clean(er) list of nodes
     graph_def = tf_graph.as_graph_def(add_shapes=True)
-    graph_def = tf.graph_util.remove_training_nodes(graph_def)
+    #graph_def = tf.graph_util.remove_training_nodes(graph_def)
 
     # Dump list of TF nodes (DEBUG only)
     if verbose:
