@@ -14,6 +14,12 @@ from random import getrandbits
 import inspect
 import numpy as np
 
+counter = 0
+def newlabel(label):
+    if label == None or type(label) != type(''):
+        counter += 1
+        return 'labbel%d'.format(counter)
+    return label
 
 THEMES = {
     "basic": {
@@ -211,12 +217,12 @@ class Graph():
     def add_edge(self, node1, node2, label=None):
         # If the edge is already present, don't add it again.
         # TODO: If an edge exists with a different label, still don't add it again.
-        edge = (self.id(node1), self.id(node2), label)
+        edge = (self.id(node1), self.id(node2), newlabel(label))
         if edge not in self.edges:
             self.edges.append(edge)
 
     def add_edge_by_id(self, vid1, vid2, label=None):
-        self.edges.append((vid1, vid2, label))
+        self.edges.append((vid1, vid2, newlabel(label)))
 
     def outgoing(self, node):
         """Returns nodes connecting out of the given node (or list of nodes)."""
