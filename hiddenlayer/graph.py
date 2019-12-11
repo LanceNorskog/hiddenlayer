@@ -19,7 +19,7 @@ def newlabel(label):
     global counter
     if label == None or type(label) != type(''):
         counter += 1
-        return ''
+        return 'E {}'.format(counter)
     return label
 
 THEMES = {
