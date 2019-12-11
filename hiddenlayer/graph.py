@@ -17,7 +17,7 @@ import numpy as np
 counter = 0
 def newlabel(label):
     global counter
-    if label == None or type(label) != type(''):
+    if label == None: # or type(label) != type(''):
         counter += 1
         return 'E {}'.format(counter)
     return label
